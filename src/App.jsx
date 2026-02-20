@@ -12,7 +12,24 @@ const App = () => {
     console.log('toggle importance of', note.id)
   }
 
-  const notes = []
+  const result = useQuery({
+    queryKey: ['notes'],
+    queryFn: async () => {
+      const response = await fetch('http://localhost:3001/notes')
+      if (!response.ok) {
+        throw new Error('Failed to fetch notes')
+      }
+      return await response.json()
+    }
+  })
+ 
+  console.log(JSON.parse(JSON.stringify(result)))
+ 
+  if (result.isLoading) {
+    return <div>loading data...</div>
+  }
+ 
+  const notes = result.data
 
   return (
     <div>

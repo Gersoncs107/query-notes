@@ -1,7 +1,17 @@
 import { useQuery } from "@tanstack/react-query"
-import { getNotes } from "./requests"
+import { getNotes, createNote } from "./requests"
 
 const App = () => {
+  const newMutation = useMutation({
+    mutationFn: createNote,
+    onSuccess: (data) => {
+      console.log('note created:', data)
+    },
+    onError: (error) => {
+      console.error('failed to create note:', error)
+    }
+  })
+
   const addNote = async (event) => {
     event.preventDefault()
     const content = event.target.note.value

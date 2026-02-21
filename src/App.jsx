@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
+import { getNotes } from "./requests"
 
 const App = () => {
   const addNote = async (event) => {

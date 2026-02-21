@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query"
+import { useQuery, useIsMutating } from "@tanstack/react-query"
 import { getNotes, createNote } from "./requests"
 
 const App = () => {

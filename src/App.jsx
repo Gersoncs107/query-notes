@@ -1,4 +1,4 @@
-import { useQuery, useIsMutating } from "@tanstack/react-query"
+import { useQuery, useMutation } from "@tanstack/react-query"
 import { getNotes, createNote } from "./requests"
 
 const App = () => {
@@ -16,6 +16,7 @@ const App = () => {
     event.preventDefault()
     const content = event.target.note.value
     event.target.note.value = ''
+    newMutation.mutate({ content, important: true })
     console.log(content)
   }
 

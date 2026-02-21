@@ -9,6 +9,11 @@
       "content": "useReducer is an alternative way for data management",
       "important": false,
       "id": "2"
+    },
+    {
+      "id": "66e0",
+      "content": "new note added",
+      "important": true
     }
   ]
 }

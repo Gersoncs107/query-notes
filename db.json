@@ -2,7 +2,7 @@
   "notes": [
     {
       "content": "React Query simplifies the communication with backend",
-      "important": false,
+      "important": true,
       "id": "1"
     },
     {

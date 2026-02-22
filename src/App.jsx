@@ -17,8 +17,9 @@ const App = () => {
 
   const updateNoteMutation = useMutation({
     mutationFn: updateNote,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['notes'] })
+    onSuccess: (updatedNote) => {
+      const notes = queryClient.getQueryData(['notes'])
+      queryClient.setQueryData(['notes'], notes.map(note => note.id === updatedNote.id ? updatedNote : note))
     },
     onError: (error) => {
       console.error('failed to update note:', error)

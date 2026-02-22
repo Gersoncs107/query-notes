@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
-import { getNotes, createNote } from "./requests"
+import { getNotes, createNote, updateNote } from "./requests"
 
 const App = () => {
   const queryClient = useQueryClient()
@@ -11,6 +11,16 @@ const App = () => {
     },
     onError: (error) => {
       console.error('failed to create note:', error)
+    }
+  })
+
+  const updateNoteMutation = useMutation({
+    mutationFn: updateNote,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['notes'] })
+    },
+    onError: (error) => {
+      console.error('failed to update note:', error)
     }
   })
 

@@ -2,18 +2,18 @@
   "notes": [
     {
       "content": "React Query simplifies the communication with backend",
-      "important": true,
+      "important": false,
       "id": "1"
     },
     {
       "content": "useReducer is an alternative way for data management",
-      "important": false,
+      "important": true,
       "id": "2"
     },
     {
       "id": "66e0",
       "content": "new note added",
-      "important": true
+      "important": false
     }
   ]
 }

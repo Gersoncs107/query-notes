@@ -33,7 +33,7 @@ const App = () => {
   }
 
   const toggleImportance = (note) => {
-    console.log('toggle importance of', note.id)
+    updateNoteMutation.mutate({ ...note, important: !note.important })
   }
 
   const result = useQuery({

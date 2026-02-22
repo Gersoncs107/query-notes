@@ -29,7 +29,6 @@ const App = () => {
     const content = event.target.note.value
     event.target.note.value = ''
     newNoteMutation.mutate({ content, important: true })
-    console.log(content)
   }
 
   const toggleImportance = (note) => {
